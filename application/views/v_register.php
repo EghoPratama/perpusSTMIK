@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Perpustakaan STMIK MARDIRA</title>
+		<link rel="shortcut icon" href="<?=base_URL()?>assets/img/mardira.png">
+		
+		<link href="<?=base_URL()?>assets/css/bootstrap.css" rel="stylesheet">
+		<style type="text/css">
+			body {
+				background-color: #f8f6f5;
+			}
+
+			body img{
+				width: 920px;
+				height: 700px;
+			}
+
+			.form-signin {
+				float: right;
+				margin-right: -50px;
+				margin-top: -800px;
+				max-width: 350px;
+				padding: 19px 50px 80px;
+				background-color: #f8f6f5;
+				-webkit-border-radius: 5px;
+					-moz-border-radius: 5px;
+						border-radius: 5px;
+				-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+					-moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+						box-shadow: 0 1px 2px rgba(0,0,0,.05);
+			}
+
+			.form-signin img{
+				width: 130px;
+				height: 130px;
+				position: relative;
+				margin-left: 55px;
+				margin-top: 105px;
+				margin-bottom: 50px;
+			}
+      
+			.form-signin .form-signin-heading,
+			.form-signin .checkbox {
+				margin-bottom: 10px;
+			}
+			
+			.form-signin input[type="text"],
+			.form-signin input[type="password"] {
+				font-size: 16px;
+				height: auto;
+				margin-bottom: 20px;
+				padding: 7px 25px;
+			}
+				
+		</style>
+		<link href="<?=base_URL()?>assets/css/bootstrap-responsive.css" rel="stylesheet">
+	</head>
+	
+	<body>
+		<img src="<?=base_URL()?>assets/img/LoginSTMIK.png" class="img-responsive">
+		<div class="container">
+			
+			<form class="form-signin" action="" method="post">
+				<img src="<?=base_URL()?>assets/img/mardira.png">
+				<legend>HALAMAN REGISTER</legend>
+				<?php if(isset($_SESSION['success'])) { ?>
+      			<div class="alert alert-success"> Akun berhasil didaftarkan </div> <?php } ?>
+    			<?php echo validation_errors('<div class="alert alert-danger">', '</div>') ?>
+				<input type="text" class="input-block-level" placeholder="Username" name="username" id="username"autofocus required>
+				<input type="text" class="input-block-level" placeholder="Nama Admin" name="nama" id="nama" autofocus required>
+				<input type="password" class="input-block-level" placeholder="Password" name="password" id="password" autofocus required>
+				<input type="password" class="input-block-level" placeholder="Ulangi Password" name="password2" id="password" autofocus required>
+				<button class="btn btn-large btn-primary" name="register">REGISTER</button>
+				<a class="btn btn-large btn-primary" href="<?php echo base_url()."index.php/Login"?>">KEMBALI</a>
+			</form>
+		</div>			
+	</body>
+</html>
